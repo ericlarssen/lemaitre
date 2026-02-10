@@ -1,0 +1,45 @@
+---
+import site from "../data/site.json";
+---
+
+<footer class="bg-forest-dark text-cream-dark">
+  <div class="max-w-6xl mx-auto px-4 py-10 grid grid-cols-1 md:grid-cols-3 gap-8">
+    <!-- Business info -->
+    <div>
+      <h3 class="font-heading text-lg text-white mb-3">{site.name}</h3>
+      <address class="not-italic text-sm leading-relaxed">
+        {site.address.street}<br />
+        {site.address.city}, {site.address.state} {site.address.zip}<br />
+        <a href={`tel:${site.phone}`} class="hover:text-white transition-colors">{site.phone}</a>
+      </address>
+    </div>
+
+    <!-- Hours -->
+    <div>
+      <h3 class="font-heading text-lg text-white mb-3">Hours</h3>
+      <ul class="text-sm space-y-1">
+        {site.hours.map(({ day, open, close }) => (
+          <li class="flex justify-between max-w-48">
+            <span>{day}</span>
+            <span>{close ? `${open} – ${close}` : open}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+
+    <!-- Quick links -->
+    <div>
+      <h3 class="font-heading text-lg text-white mb-3">Quick Links</h3>
+      <ul class="text-sm space-y-1">
+        <li><a href="/" class="hover:text-white transition-colors">Home</a></li>
+        <li><a href="/services" class="hover:text-white transition-colors">Services</a></li>
+        <li><a href="/about" class="hover:text-white transition-colors">About</a></li>
+        <li><a href="/contact" class="hover:text-white transition-colors">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="border-t border-forest-light text-center text-xs py-4 text-warm-gray-light">
+    &copy; {new Date().getFullYear()} {site.name}. All rights reserved.
+  </div>
+</footer>

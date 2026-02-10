@@ -1,0 +1,33 @@
+@import "tailwindcss";
+
+@theme {
+  /* Warm, grounded palette for a local auto shop */
+  --color-cream: #F5F0E8;
+  --color-cream-dark: #E8E0D0;
+  --color-forest: #2D4A3E;
+  --color-forest-light: #3D6354;
+  --color-forest-dark: #1E3229;
+  --color-rust: #C45D3E;
+  --color-rust-light: #D4735A;
+  --color-rust-dark: #A14A30;
+  --color-charcoal: #2C2C2C;
+  --color-warm-gray: #6B6560;
+  --color-warm-gray-light: #9B9590;
+
+  --font-heading: "Georgia", "Times New Roman", serif;
+  --font-body: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--color-charcoal);
+  background-color: var(--color-cream);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+}

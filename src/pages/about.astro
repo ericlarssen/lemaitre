@@ -1,0 +1,35 @@
+---
+import Layout from "../layouts/Layout.astro";
+import site from "../data/site.json";
+---
+
+<Layout title={`About — ${site.name}`}>
+  <section class="py-16 px-4">
+    <div class="max-w-3xl mx-auto">
+      <h1 class="text-4xl font-heading font-bold text-center mb-10">About Us</h1>
+
+      <div class="prose prose-lg mx-auto space-y-6 text-warm-gray leading-relaxed">
+        <p>
+          Le Maitre's Auto and Repair has been serving our community with honest,
+          dependable auto repair. We're a family-owned shop that treats every
+          customer like a neighbor — because most of them are.
+        </p>
+        <p>
+          We believe in doing the job right the first time, explaining what we find
+          in plain language, and never pushing repairs you don't need. When you
+          bring your car to us, you'll get a straightforward assessment and a
+          fair price.
+        </p>
+        <p>
+          Whether it's a routine oil change or a major engine repair, we put the
+          same care and attention into every vehicle that comes through our doors.
+        </p>
+      </div>
+
+      <!-- Placeholder for a team photo or shop photo -->
+      <div class="mt-12 bg-cream-dark rounded-lg p-12 text-center text-warm-gray-light">
+        <p class="text-sm italic">[ Shop or team photo goes here ]</p>
+      </div>
+    </div>
+  </section>
+</Layout>

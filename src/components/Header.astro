@@ -1,0 +1,85 @@
+---
+import site from "../data/site.json";
+
+const currentPath = Astro.url.pathname;
+
+const navLinks = [
+  { href: "/", label: "Home" },
+  { href: "/services", label: "Services" },
+  { href: "/about", label: "About" },
+  { href: "/contact", label: "Contact" },
+];
+---
+
+<header class="bg-forest text-cream">
+  <!-- Top bar with phone -->
+  <div class="bg-forest-dark text-sm py-1.5 px-4 text-center">
+    <a href={`tel:${site.phone}`} class="text-cream-dark hover:text-white transition-colors">
+      Call us: {site.phone}
+    </a>
+  </div>
+
+  <!-- Main nav -->
+  <nav class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
+    <a href="/" class="text-xl font-heading font-bold tracking-tight">
+      {site.name}
+    </a>
+
+    <!-- Desktop nav -->
+    <ul class="hidden md:flex gap-6 text-sm font-medium">
+      {navLinks.map(({ href, label }) => (
+        <li>
+          <a
+            href={href}
+            class:list={[
+              "py-1 border-b-2 transition-colors",
+              currentPath === href
+                ? "border-rust text-white"
+                : "border-transparent text-cream-dark hover:text-white hover:border-rust-light",
+            ]}
+          >
+            {label}
+          </a>
+        </li>
+      ))}
+    </ul>
+
+    <!-- Mobile menu button -->
+    <button
+      id="mobile-menu-btn"
+      class="md:hidden text-cream-dark hover:text-white"
+      aria-label="Toggle menu"
+    >
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+    </button>
+  </nav>
+
+  <!-- Mobile nav -->
+  <ul id="mobile-menu" class="hidden md:hidden px-4 pb-4 space-y-2 text-sm font-medium">
+    {navLinks.map(({ href, label }) => (
+      <li>
+        <a
+          href={href}
+          class:list={[
+            "block py-2 px-3 rounded transition-colors",
+            currentPath === href
+              ? "bg-forest-light text-white"
+              : "text-cream-dark hover:bg-forest-light hover:text-white",
+          ]}
+        >
+          {label}
+        </a>
+      </li>
+    ))}
+  </ul>
+</header>
+
+<script>
+  const btn = document.getElementById("mobile-menu-btn");
+  const menu = document.getElementById("mobile-menu");
+  btn?.addEventListener("click", () => {
+    menu?.classList.toggle("hidden");
+  });
+</script>
