@@ -1,0 +1,95 @@
+---
+import Layout from "../layouts/Layout.astro";
+import site from "../data/site.json";
+---
+
+<Layout title={`Terms & Conditions — ${site.name}`}>
+  <section class="pt-12 pb-20 px-4">
+    <div class="max-w-3xl mx-auto">
+      <span class="section-label">Legal</span>
+      <h1 class="text-3xl md:text-4xl font-heading font-bold mb-2">Terms & Conditions</h1>
+      <span class="heading-accent mb-8"></span>
+      <p class="text-warm-gray text-sm mb-10">Last updated: February 2026</p>
+
+      <div class="space-y-8 text-warm-gray leading-relaxed">
+        <div>
+          <h2 class="font-heading text-xl font-semibold text-charcoal mb-3">Estimates</h2>
+          <p>
+            All repair estimates are provided in good faith based on our initial inspection.
+            Estimates are not guaranteed final prices. If additional work is discovered during
+            the repair process, we will contact you for approval before proceeding. No
+            additional charges will be applied without your authorization.
+          </p>
+        </div>
+
+        <div>
+          <h2 class="font-heading text-xl font-semibold text-charcoal mb-3">Authorization to Repair</h2>
+          <p>
+            By leaving your vehicle with us and approving an estimate (verbally, in writing,
+            or electronically), you authorize us to perform the agreed-upon services. You
+            confirm that you are the vehicle owner or are authorized to approve repairs on
+            the owner's behalf.
+          </p>
+        </div>
+
+        <div>
+          <h2 class="font-heading text-xl font-semibold text-charcoal mb-3">Payment</h2>
+          <p>
+            Payment is due upon completion of services unless other arrangements have been
+            made in advance. We accept cash, check, and major credit/debit cards. Vehicles
+            will not be released until payment is received in full.
+          </p>
+        </div>
+
+        <div>
+          <h2 class="font-heading text-xl font-semibold text-charcoal mb-3">Parts & Materials</h2>
+          <p>
+            We use quality parts appropriate for each repair. If you have a preference for
+            OEM, aftermarket, or customer-supplied parts, let us know before work begins.
+            We cannot warranty labor performed with customer-supplied parts.
+          </p>
+        </div>
+
+        <div>
+          <h2 class="font-heading text-xl font-semibold text-charcoal mb-3">Liability</h2>
+          <p>
+            We are not responsible for loss or damage to personal items left in vehicles.
+            While your vehicle is in our care, we maintain reasonable safeguards, but our
+            liability is limited to the scope of the repair services performed. We are not
+            liable for pre-existing conditions, normal wear and tear, or issues unrelated
+            to the services provided.
+          </p>
+        </div>
+
+        <div>
+          <h2 class="font-heading text-xl font-semibold text-charcoal mb-3">Abandoned Vehicles</h2>
+          <p>
+            Vehicles left at our facility for more than 30 days after completion of service
+            without communication may be considered abandoned. Storage fees may apply, and
+            we will follow Iowa state procedures for abandoned vehicles.
+          </p>
+        </div>
+
+        <div>
+          <h2 class="font-heading text-xl font-semibold text-charcoal mb-3">Disputes</h2>
+          <p>
+            If you have a concern about any service performed, please contact us directly.
+            We stand behind our work and will make every effort to resolve the issue fairly
+            and promptly.
+          </p>
+        </div>
+
+        <div>
+          <h2 class="font-heading text-xl font-semibold text-charcoal mb-3">Contact Us</h2>
+          <address class="not-italic">
+            {site.name}<br />
+            {site.address.street}<br />
+            {site.address.city}, {site.address.state} {site.address.zip}<br />
+            <a href={`tel:${site.phone}`} class="text-rust hover:text-rust-dark transition-colors">{site.phone}</a><br />
+            <a href={`mailto:${site.email}`} class="text-rust hover:text-rust-dark transition-colors">{site.email}</a>
+          </address>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>

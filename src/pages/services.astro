@@ -1,33 +1,52 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import site from "../data/site.json";
+const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
 ---
 
 <Layout title={`Services — ${site.name}`}>
-  <section class="py-16 px-4">
-    <div class="max-w-4xl mx-auto">
-      <h1 class="text-4xl font-heading font-bold text-center mb-4">Our Services</h1>
-      <p class="text-warm-gray text-center mb-12 max-w-2xl mx-auto">
-        We work on most makes and models. Whether it's routine maintenance or a major repair,
-        we'll give you an honest assessment and fair price.
-      </p>
+  <!-- Hero banner -->
+  <section class="relative py-20 px-4 overflow-hidden">
+    <div class="absolute inset-0">
+      <img src={`${base}images/tire.png`} alt="" class="w-full h-full object-cover" />
+      <div class="absolute inset-0 bg-forest/80"></div>
+    </div>
+    <div class="relative max-w-4xl mx-auto text-center">
+      <h1 class="text-4xl font-heading font-bold text-white mb-4">Our Services</h1>
+    </div>
+  </section>
 
-      <div class="space-y-6">
-        {site.services.map(({ title, description }) => (
-          <div class="bg-white rounded-lg p-6 shadow-sm border border-cream-dark/30">
-            <h2 class="font-heading text-2xl font-semibold text-forest mb-2">{title}</h2>
-            <p class="text-warm-gray leading-relaxed">{description}</p>
+  <section class="py-16 px-4">
+    <div class="max-w-5xl mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {site.services.map(({ title, image, details }) => (
+          <div class="bg-white rounded-lg overflow-hidden shadow-sm border border-cream-dark/30">
+            <div class="h-48 overflow-hidden">
+              <img src={`${base}${image.slice(1)}`} alt={title} class="w-full h-full object-cover" loading="lazy" />
+            </div>
+            <div class="p-6">
+              <h2 class="font-heading text-xl font-semibold text-forest mb-3">{title}</h2>
+              <ul class="space-y-1 text-warm-gray text-sm">
+                {details.map((item: string) => (
+                  <li>{item}</li>
+                ))}
+              </ul>
+            </div>
           </div>
         ))}
       </div>
 
-      <div class="mt-12 text-center bg-forest rounded-lg p-8">
-        <h2 class="font-heading text-2xl text-white mb-3">Not sure what you need?</h2>
-        <p class="text-cream-dark mb-6">
-          No problem. Give us a call or stop by and we'll take a look.
+      <!-- Local & Personal CTA -->
+      <div class="mt-16 text-center">
+        <h2 class="text-3xl font-heading font-bold mb-4">Local & Personal</h2>
+        <p class="text-warm-gray mb-2">
+          Contact your local Eldridge auto repair shop for a free quote and availability.
+        </p>
+        <p class="text-warm-gray mb-6">
+          Contact us at <a href={`tel:${site.phone}`} class="text-rust hover:text-rust-dark font-medium transition-colors">{site.phone}</a>
         </p>
         <a
-          href="/contact"
+          href={`${base}contact`}
           class="inline-block bg-rust hover:bg-rust-light text-white font-semibold py-3 px-8 rounded transition-colors"
         >
           Contact Us

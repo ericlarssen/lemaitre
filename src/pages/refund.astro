@@ -1,0 +1,80 @@
+---
+import Layout from "../layouts/Layout.astro";
+import site from "../data/site.json";
+---
+
+<Layout title={`Warranty & Refund Policy — ${site.name}`}>
+  <section class="pt-12 pb-20 px-4">
+    <div class="max-w-3xl mx-auto">
+      <span class="section-label">Legal</span>
+      <h1 class="text-3xl md:text-4xl font-heading font-bold mb-2">Warranty & Refund Policy</h1>
+      <span class="heading-accent mb-8"></span>
+      <p class="text-warm-gray text-sm mb-10">Last updated: February 2026</p>
+
+      <div class="space-y-8 text-warm-gray leading-relaxed">
+        <div>
+          <h2 class="font-heading text-xl font-semibold text-charcoal mb-3">Our Warranty</h2>
+          <p>
+            We stand behind our work. Most repairs performed by {site.name} include a
+            <strong class="text-charcoal">12-month / 12,000-mile warranty</strong> on parts
+            and labor, whichever comes first. This warranty covers defects in parts we
+            supply and workmanship performed by our technicians.
+          </p>
+        </div>
+
+        <div>
+          <h2 class="font-heading text-xl font-semibold text-charcoal mb-3">What's Covered</h2>
+          <ul class="list-disc list-inside space-y-1">
+            <li>Defective parts supplied and installed by our shop</li>
+            <li>Failures directly related to our workmanship</li>
+            <li>Repeat repairs needed for the same issue within the warranty period</li>
+          </ul>
+        </div>
+
+        <div>
+          <h2 class="font-heading text-xl font-semibold text-charcoal mb-3">What's Not Covered</h2>
+          <ul class="list-disc list-inside space-y-1">
+            <li>Normal wear and tear (brake pads, belts, filters, etc.)</li>
+            <li>Damage caused by accidents, misuse, neglect, or unauthorized modifications</li>
+            <li>Customer-supplied parts (we warranty our labor only in these cases)</li>
+            <li>Maintenance items or consumables (fluids, wiper blades, bulbs)</li>
+            <li>Issues unrelated to the original repair</li>
+          </ul>
+        </div>
+
+        <div>
+          <h2 class="font-heading text-xl font-semibold text-charcoal mb-3">How to Make a Claim</h2>
+          <p>
+            If you believe a repair is covered under warranty, contact us as soon as possible.
+            Bring the vehicle back to our shop so we can inspect the issue. If the problem is
+            covered, we'll make it right at no additional cost.
+          </p>
+        </div>
+
+        <div>
+          <h2 class="font-heading text-xl font-semibold text-charcoal mb-3">Refunds</h2>
+          <p>
+            If you are unsatisfied with a repair, talk to us first — we want to make it right.
+            Refunds are handled on a case-by-case basis. If a repair cannot be completed or a
+            part is returned unused, we will work with you on an appropriate refund. Diagnostic
+            fees and labor for completed work are generally non-refundable.
+          </p>
+        </div>
+
+        <div>
+          <h2 class="font-heading text-xl font-semibold text-charcoal mb-3">Contact Us</h2>
+          <p>
+            Questions about a warranty claim or refund? Get in touch:
+          </p>
+          <address class="not-italic mt-2">
+            {site.name}<br />
+            {site.address.street}<br />
+            {site.address.city}, {site.address.state} {site.address.zip}<br />
+            <a href={`tel:${site.phone}`} class="text-rust hover:text-rust-dark transition-colors">{site.phone}</a><br />
+            <a href={`mailto:${site.email}`} class="text-rust hover:text-rust-dark transition-colors">{site.email}</a>
+          </address>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>

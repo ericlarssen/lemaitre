@@ -4,18 +4,18 @@
   /* Warm, grounded palette for a local auto shop */
   --color-cream: #F5F0E8;
   --color-cream-dark: #E8E0D0;
-  --color-forest: #2D4A3E;
-  --color-forest-light: #3D6354;
-  --color-forest-dark: #1E3229;
-  --color-rust: #C45D3E;
-  --color-rust-light: #D4735A;
-  --color-rust-dark: #A14A30;
+  --color-forest: #343130;
+  --color-forest-light: #4A4544;
+  --color-forest-dark: #232020;
+  --color-rust: #C21A1A;
+  --color-rust-light: #D93B3B;
+  --color-rust-dark: #9E1515;
   --color-charcoal: #2C2C2C;
   --color-warm-gray: #6B6560;
   --color-warm-gray-light: #9B9590;
 
-  --font-heading: "Georgia", "Times New Roman", serif;
-  --font-body: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  --font-heading: "Libre Baskerville", Georgia, serif;
+  --font-body: "Source Sans 3", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
 }
 
 html {
@@ -30,4 +30,28 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading);
+}
+
+.section-label {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-rust);
+  margin-bottom: 0.5rem;
+}
+
+.heading-accent {
+  display: block;
+  width: 2.5rem;
+  height: 3px;
+  background-color: var(--color-rust);
+  margin-top: 0.75rem;
+}
+
+.heading-accent--center {
+  margin-left: auto;
+  margin-right: auto;
 }

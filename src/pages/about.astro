@@ -1,34 +1,72 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import site from "../data/site.json";
+const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
 ---
 
 <Layout title={`About — ${site.name}`}>
-  <section class="py-16 px-4">
-    <div class="max-w-3xl mx-auto">
-      <h1 class="text-4xl font-heading font-bold text-center mb-10">About Us</h1>
-
-      <div class="prose prose-lg mx-auto space-y-6 text-warm-gray leading-relaxed">
-        <p>
-          Le Maitre's Auto and Repair has been serving our community with honest,
-          dependable auto repair. We're a family-owned shop that treats every
-          customer like a neighbor — because most of them are.
-        </p>
-        <p>
-          We believe in doing the job right the first time, explaining what we find
-          in plain language, and never pushing repairs you don't need. When you
-          bring your car to us, you'll get a straightforward assessment and a
-          fair price.
-        </p>
-        <p>
-          Whether it's a routine oil change or a major engine repair, we put the
-          same care and attention into every vehicle that comes through our doors.
-        </p>
+  <!-- Our Story -->
+  <section class="pt-12 pb-16 px-4">
+    <div class="max-w-4xl mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+        <div class="rounded-lg overflow-hidden shadow-md">
+          <img src={`${base}images/corey.png`} alt="Corey LeMaitre, owner" class="w-full h-auto" />
+        </div>
+        <div>
+          <h1 class="text-4xl font-heading font-bold mb-2">Our Story</h1>
+          <h2 class="text-2xl font-heading font-bold mb-6 text-rust">
+            Built on Passion. Driven by Integrity.
+          </h2>
+          <div class="space-y-4 text-warm-gray leading-relaxed">
+            <p>
+              Corey's love for cars started early — in his family garage, taking apart
+              engines just to see how they worked. Over the years, that curiosity grew
+              into skill, and that skill into a dream: to open his own shop built on
+              honesty, hard work, and hometown pride.
+            </p>
+            <p>
+              As a lifelong Eldridge resident of this community, Corey is dedicated to
+              providing reliable repairs and friendly service you can trust.
+            </p>
+            <p>
+              Whether you're here for routine maintenance or major repairs, LeMaitre's
+              Auto Repair is here to keep you safely on the road.
+            </p>
+          </div>
+        </div>
       </div>
+    </div>
+  </section>
 
-      <!-- Placeholder for a team photo or shop photo -->
-      <div class="mt-12 bg-cream-dark rounded-lg p-12 text-center text-warm-gray-light">
-        <p class="text-sm italic">[ Shop or team photo goes here ]</p>
+  <!-- Contact CTA -->
+  <section class="bg-cream-dark py-16 px-4">
+    <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 items-center">
+      <div class="rounded-lg overflow-hidden shadow-md">
+        <img src={`${base}images/corey-2.png`} alt="Corey at the shop" class="w-full h-auto" />
+      </div>
+      <div class="md:col-span-2 text-center md:text-left">
+        <h2 class="text-3xl font-heading font-bold mb-4">Let's Work Together</h2>
+        <p class="text-warm-gray mb-6">
+          Bring your vehicle to a shop you can trust.
+        </p>
+        <div class="space-y-2 text-warm-gray mb-6">
+          <address class="not-italic">
+            {site.address.street}<br />
+            {site.address.city}, {site.address.state} {site.address.zip}
+          </address>
+          <p>
+            <a href={`mailto:${site.email}`} class="hover:text-forest transition-colors">{site.email}</a>
+          </p>
+          <p>
+            <a href={`tel:${site.phone}`} class="hover:text-forest transition-colors">{site.phone}</a>
+          </p>
+        </div>
+        <a
+          href={`${base}contact`}
+          class="inline-block bg-rust hover:bg-rust-light text-white font-semibold py-3 px-8 rounded transition-colors"
+        >
+          Contact Us
+        </a>
       </div>
     </div>
   </section>
