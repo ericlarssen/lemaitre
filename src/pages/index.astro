@@ -6,28 +6,29 @@ const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
 
 <Layout title={`${site.name} — Local Auto Repair in Eldridge, Iowa`}>
   <!-- Hero -->
-  <section class="relative text-cream py-24 md:py-36 px-4 overflow-hidden">
-    <div class="absolute inset-0">
-      <img src={`${base}images/ribbon-cutting.png`} alt="" class="w-full h-full object-cover" />
-      <div class="absolute inset-0 bg-forest/70"></div>
-    </div>
-    <div class="relative max-w-4xl mx-auto text-center">
-      <h1 class="font-heading font-bold text-3xl md:text-5xl lg:text-6xl text-white leading-tight mb-6">
-        Where Passion<br class="hidden sm:block" /> Meets Precision
-      </h1>
-      <p class="text-cream/80 text-lg md:text-xl mb-10 max-w-2xl mx-auto leading-relaxed">
-        Honest service, expert care, and hometown pride in every repair.
-      </p>
-      <div class="flex flex-col sm:flex-row items-center gap-4 justify-center">
-        <a
-          href={`${base}contact`}
-          class="inline-block bg-rust hover:bg-rust-light text-white font-semibold py-3 px-8 rounded transition-colors"
-        >
-          Get in Touch
-        </a>
-        <span class="text-cream-dark/60 text-sm">
-          or call <a href={`tel:${site.phone}`} class="underline hover:text-white transition-colors">{site.phone}</a>
-        </span>
+  <section class="bg-forest text-cream pb-4">
+    <div class="max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+      <div class="py-16 md:py-24">
+        <h1 class="font-heading font-bold text-3xl md:text-4xl lg:text-5xl text-white leading-tight mb-6">
+          Where Passion Meets Precision
+        </h1>
+        <p class="text-cream-dark/80 text-lg mb-8 leading-relaxed">
+          Honest service, expert care, and hometown pride in every repair.
+        </p>
+        <div class="flex flex-col sm:flex-row items-start gap-4">
+          <a
+            href={`${base}contact`}
+            class="inline-block bg-rust hover:bg-rust-light text-white font-semibold py-3 px-8 rounded transition-colors"
+          >
+            Get in Touch
+          </a>
+          <span class="text-cream-dark/60 text-sm py-3">
+            or call <a href={`tel:${site.phone}`} class="underline hover:text-white transition-colors">{site.phone}</a>
+          </span>
+        </div>
+      </div>
+      <div class="hidden md:flex justify-center">
+        <img src={`${base}images/corey-2.png`} alt="Corey LeMaitre" class="w-3/4 h-auto rounded-lg" />
       </div>
     </div>
   </section>

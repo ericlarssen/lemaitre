@@ -25,7 +25,7 @@ const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
       <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
         <!-- Contact form -->
         <form
-          action="#"
+          action="https://formspree.io/f/{your-id}"
           method="POST"
           class="space-y-5"
         >
@@ -57,6 +57,38 @@ const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
               name="phone"
               class="w-full border border-cream-dark rounded px-4 py-2 bg-white text-charcoal focus:outline-none focus:ring-2 focus:ring-forest"
             />
+          </div>
+          <div class="grid grid-cols-3 gap-3">
+            <div>
+              <label for="vehicle-year" class="block text-sm font-medium mb-1">Year <span class="text-warm-gray-light">(opt.)</span></label>
+              <input
+                type="text"
+                id="vehicle-year"
+                name="vehicle-year"
+                placeholder="2019"
+                class="w-full border border-cream-dark rounded px-4 py-2 bg-white text-charcoal focus:outline-none focus:ring-2 focus:ring-forest"
+              />
+            </div>
+            <div>
+              <label for="vehicle-make" class="block text-sm font-medium mb-1">Make <span class="text-warm-gray-light">(opt.)</span></label>
+              <input
+                type="text"
+                id="vehicle-make"
+                name="vehicle-make"
+                placeholder="Ford"
+                class="w-full border border-cream-dark rounded px-4 py-2 bg-white text-charcoal focus:outline-none focus:ring-2 focus:ring-forest"
+              />
+            </div>
+            <div>
+              <label for="vehicle-model" class="block text-sm font-medium mb-1">Model <span class="text-warm-gray-light">(opt.)</span></label>
+              <input
+                type="text"
+                id="vehicle-model"
+                name="vehicle-model"
+                placeholder="F-150"
+                class="w-full border border-cream-dark rounded px-4 py-2 bg-white text-charcoal focus:outline-none focus:ring-2 focus:ring-forest"
+              />
+            </div>
           </div>
           <div>
             <label for="message" class="block text-sm font-medium mb-1">Message</label>
