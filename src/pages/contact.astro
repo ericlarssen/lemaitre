@@ -6,143 +6,157 @@ const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
 
 <Layout title={`Contact — ${site.name}`}>
   <!-- Hero banner -->
-  <section class="relative py-20 px-4 overflow-hidden">
-    <div class="absolute inset-0">
-      <img src={`${base}images/mechanic-2.png`} alt="" class="w-full h-full object-cover" />
-      <div class="absolute inset-0 bg-forest/80"></div>
+  <section class="relative py-20 px-4 overflow-hidden bg-ink">
+    <div class="absolute inset-0 photo-duotone opacity-70">
+      <img src={`${base}images/mechanic-2.png`} alt="" />
     </div>
     <div class="relative max-w-5xl mx-auto text-center">
-      <h1 class="text-4xl font-heading font-bold text-white mb-4">Contact Us</h1>
-      <p class="text-cream-dark text-lg">
+      <span class="eyebrow eyebrow--light justify-center">Get In Touch</span>
+      <h1 class="text-4xl md:text-5xl font-display font-black text-white mt-2 mb-4">Contact Us</h1>
+      <p class="text-ash text-lg font-body normal-case max-w-md mx-auto">
         Have a question or want to schedule service? Reach out and we'll get back to you.
       </p>
     </div>
   </section>
 
-  <section class="py-16 px-4">
+  <section class="py-16 px-4 bg-paper">
     <div class="max-w-5xl mx-auto">
-
       <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
         <!-- Contact form -->
         <form
-          action="https://formspree.io/f/{your-id}"
+          id="contact-form"
+          name="contact"
           method="POST"
+          data-netlify="true"
+          netlify-honeypot="bot-field"
           class="space-y-5"
         >
+          <input type="hidden" name="form-name" value="contact" />
+          <p class="hidden">
+            <label>
+              Don't fill this out if you're human: <input name="bot-field" />
+            </label>
+          </p>
           <div>
-            <label for="name" class="block text-sm font-medium mb-1">Name</label>
+            <label for="name" class="block font-mono text-xs uppercase tracking-wide text-ash-dark mb-1">Name</label>
             <input
               type="text"
               id="name"
               name="name"
               required
-              class="w-full border border-cream-dark rounded px-4 py-2 bg-white text-charcoal focus:outline-none focus:ring-2 focus:ring-forest"
+              class="w-full border border-concrete px-4 py-2 bg-white text-ink focus:outline-none focus:ring-2 focus:ring-signal"
             />
           </div>
           <div>
-            <label for="email" class="block text-sm font-medium mb-1">Email</label>
+            <label for="email" class="block font-mono text-xs uppercase tracking-wide text-ash-dark mb-1">Email</label>
             <input
               type="email"
               id="email"
               name="email"
               required
-              class="w-full border border-cream-dark rounded px-4 py-2 bg-white text-charcoal focus:outline-none focus:ring-2 focus:ring-forest"
+              class="w-full border border-concrete px-4 py-2 bg-white text-ink focus:outline-none focus:ring-2 focus:ring-signal"
             />
           </div>
           <div>
-            <label for="phone" class="block text-sm font-medium mb-1">Phone <span class="text-warm-gray-light">(optional)</span></label>
+            <label for="phone" class="block font-mono text-xs uppercase tracking-wide text-ash-dark mb-1">Phone <span class="text-ash">(optional)</span></label>
             <input
               type="tel"
               id="phone"
               name="phone"
-              class="w-full border border-cream-dark rounded px-4 py-2 bg-white text-charcoal focus:outline-none focus:ring-2 focus:ring-forest"
+              class="w-full border border-concrete px-4 py-2 bg-white text-ink focus:outline-none focus:ring-2 focus:ring-signal"
             />
           </div>
           <div class="grid grid-cols-3 gap-3">
             <div>
-              <label for="vehicle-year" class="block text-sm font-medium mb-1">Year <span class="text-warm-gray-light">(opt.)</span></label>
+              <label for="vehicle-year" class="block font-mono text-xs uppercase tracking-wide text-ash-dark mb-1">Year <span class="text-ash">(opt.)</span></label>
               <input
                 type="text"
                 id="vehicle-year"
                 name="vehicle-year"
                 placeholder="2019"
-                class="w-full border border-cream-dark rounded px-4 py-2 bg-white text-charcoal focus:outline-none focus:ring-2 focus:ring-forest"
+                class="w-full border border-concrete px-4 py-2 bg-white text-ink focus:outline-none focus:ring-2 focus:ring-signal"
               />
             </div>
             <div>
-              <label for="vehicle-make" class="block text-sm font-medium mb-1">Make <span class="text-warm-gray-light">(opt.)</span></label>
+              <label for="vehicle-make" class="block font-mono text-xs uppercase tracking-wide text-ash-dark mb-1">Make <span class="text-ash">(opt.)</span></label>
               <input
                 type="text"
                 id="vehicle-make"
                 name="vehicle-make"
                 placeholder="Ford"
-                class="w-full border border-cream-dark rounded px-4 py-2 bg-white text-charcoal focus:outline-none focus:ring-2 focus:ring-forest"
+                class="w-full border border-concrete px-4 py-2 bg-white text-ink focus:outline-none focus:ring-2 focus:ring-signal"
               />
             </div>
             <div>
-              <label for="vehicle-model" class="block text-sm font-medium mb-1">Model <span class="text-warm-gray-light">(opt.)</span></label>
+              <label for="vehicle-model" class="block font-mono text-xs uppercase tracking-wide text-ash-dark mb-1">Model <span class="text-ash">(opt.)</span></label>
               <input
                 type="text"
                 id="vehicle-model"
                 name="vehicle-model"
                 placeholder="F-150"
-                class="w-full border border-cream-dark rounded px-4 py-2 bg-white text-charcoal focus:outline-none focus:ring-2 focus:ring-forest"
+                class="w-full border border-concrete px-4 py-2 bg-white text-ink focus:outline-none focus:ring-2 focus:ring-signal"
               />
             </div>
           </div>
           <div>
-            <label for="message" class="block text-sm font-medium mb-1">Message</label>
+            <label for="message" class="block font-mono text-xs uppercase tracking-wide text-ash-dark mb-1">Message</label>
             <textarea
               id="message"
               name="message"
               rows="5"
               required
-              class="w-full border border-cream-dark rounded px-4 py-2 bg-white text-charcoal focus:outline-none focus:ring-2 focus:ring-forest resize-y"
+              class="w-full border border-concrete px-4 py-2 bg-white text-ink focus:outline-none focus:ring-2 focus:ring-signal resize-y"
             ></textarea>
           </div>
-          <button
-            type="submit"
-            class="bg-rust hover:bg-rust-light text-white font-semibold py-3 px-8 rounded transition-colors w-full sm:w-auto"
-          >
+          <button type="submit" class="btn-signal w-full sm:w-auto">
             Send Message
           </button>
         </form>
+        <p
+          id="contact-form-status"
+          class="hidden font-mono text-sm border-l-2 pl-3 py-1"
+          role="status"
+        ></p>
 
         <!-- Contact info + map -->
-        <div class="space-y-6">
+        <div class="space-y-8">
           <div>
-            <h2 class="font-heading text-xl font-semibold mb-3">Get in Touch</h2>
-            <ul class="space-y-2 text-sm text-warm-gray">
+            <span class="eyebrow">Get In Touch</span>
+            <ul class="space-y-2 text-sm font-mono mt-3 text-ash-dark">
               <li>
-                <span class="font-medium text-charcoal">Phone:</span>
-                <a href={`tel:${site.phone}`} class="hover:text-forest transition-colors">{site.phone}</a>
+                <span class="text-ink">Phone:</span>
+                <a href={`tel:${site.phone}`} class="hover:text-signal transition-colors">{site.phone}</a>
               </li>
               <li>
-                <span class="font-medium text-charcoal">Email:</span>
-                <a href={`mailto:${site.email}`} class="hover:text-forest transition-colors">{site.email}</a>
+                <span class="text-ink">Email:</span>
+                <a href={`mailto:${site.email}`} class="hover:text-signal transition-colors">{site.email}</a>
               </li>
               <li>
-                <span class="font-medium text-charcoal">Address:</span>
+                <span class="text-ink">Address:</span>
                 {site.address.street}, {site.address.city}, {site.address.state} {site.address.zip}
+              </li>
+              <li>
+                <span class="text-ink">Venmo:</span>
+                <a href={`https://venmo.com/u/${site.venmo}`} class="hover:text-signal transition-colors" target="_blank" rel="noopener">@{site.venmo}</a>
               </li>
             </ul>
           </div>
 
           <div>
-            <h2 class="font-heading text-xl font-semibold mb-3">Hours</h2>
-            <ul class="space-y-1 text-sm">
+            <span class="eyebrow">Hours</span>
+            <ul class="space-y-1 font-mono text-sm mt-3">
               {site.hours.map(({ days, time }) => (
-                <li class="flex justify-between max-w-64">
-                  <span class="font-medium">{days}</span>
-                  <span class="text-warm-gray">{time}</span>
+                <li class="flex justify-between max-w-64 border-b border-concrete py-1">
+                  <span class="text-ink">{days}</span>
+                  <span class="text-ash-dark">{time}</span>
                 </li>
               ))}
             </ul>
-            <p class="text-warm-gray text-xs mt-3 italic">{site.hoursNote}</p>
-            <p class="text-warm-gray text-xs mt-1 italic">After-hours key drop available.</p>
+            <p class="text-ash text-xs mt-3">{site.hoursNote}</p>
+            <p class="text-ash text-xs mt-1">After-hours key drop available.</p>
           </div>
 
-          <div class="rounded-lg overflow-hidden shadow-md h-52">
+          <div class="overflow-hidden h-52 border border-concrete">
             <iframe
               src={site.googleMapsEmbedUrl}
               width="100%"
@@ -151,7 +165,7 @@ const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
               allowfullscreen=""
               loading="lazy"
               referrerpolicy="no-referrer-when-downgrade"
-              title="Map to Le Maitre's Auto and Repair"
+              title="Map to LeMaitre's Auto and Repair"
             ></iframe>
           </div>
         </div>
@@ -159,3 +173,44 @@ const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
     </div>
   </section>
 </Layout>
+
+<script>
+  const form = document.getElementById("contact-form") as HTMLFormElement | null;
+  const status = document.getElementById("contact-form-status");
+
+  form?.addEventListener("submit", async (event) => {
+    event.preventDefault();
+    if (!status) return;
+
+    const submitButton = form.querySelector('button[type="submit"]') as HTMLButtonElement | null;
+    if (submitButton) {
+      submitButton.disabled = true;
+      submitButton.textContent = "Sending...";
+    }
+
+    try {
+      const response = await fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams(new FormData(form) as unknown as Record<string, string>).toString(),
+      });
+
+      if (!response.ok) throw new Error(`Status ${response.status}`);
+
+      form.reset();
+      form.hidden = true;
+      status.textContent = "Message sent. We'll get back to you soon.";
+      status.classList.remove("hidden", "border-signal", "text-signal");
+      status.classList.add("border-ink", "text-ink");
+    } catch (err) {
+      status.textContent = "Something went wrong sending that. Call us instead — " +
+        (document.querySelector('a[href^="tel:"]')?.textContent ?? "");
+      status.classList.remove("hidden", "border-ink", "text-ink");
+      status.classList.add("border-signal", "text-signal");
+      if (submitButton) {
+        submitButton.disabled = false;
+        submitButton.textContent = "Send Message";
+      }
+    }
+  });
+</script>

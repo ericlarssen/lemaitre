@@ -6,29 +6,33 @@ const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
 
 <Layout title={`Services — ${site.name}`}>
   <!-- Hero banner -->
-  <section class="relative py-20 px-4 overflow-hidden">
-    <div class="absolute inset-0">
-      <img src={`${base}images/tire.png`} alt="" class="w-full h-full object-cover" />
-      <div class="absolute inset-0 bg-forest/80"></div>
+  <section class="relative py-20 px-4 overflow-hidden bg-ink">
+    <div class="absolute inset-0 photo-duotone opacity-70">
+      <img src={`${base}images/tire.png`} alt="" />
     </div>
     <div class="relative max-w-4xl mx-auto text-center">
-      <h1 class="text-4xl font-heading font-bold text-white mb-4">Our Services</h1>
+      <span class="eyebrow eyebrow--light justify-center">Full-Service Shop</span>
+      <h1 class="text-4xl md:text-5xl font-display font-black text-white mt-2">Services</h1>
     </div>
   </section>
 
-  <section class="py-16 px-4">
+  <section class="py-16 px-4 bg-paper">
     <div class="max-w-5xl mx-auto">
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {site.services.map(({ title, image, details }) => (
-          <div class="bg-white rounded-lg overflow-hidden shadow-sm border border-cream-dark/30">
-            <div class="h-48 overflow-hidden">
-              <img src={`${base}${image.slice(1)}`} alt={title} class="w-full h-full object-cover" loading="lazy" />
+        {site.services.map(({ title, description, image, details }) => (
+          <div class="bg-white border border-concrete flex flex-col">
+            <div class="relative h-44 photo-duotone">
+              <img src={`${base}${image.slice(1)}`} alt={title} loading="lazy" />
             </div>
-            <div class="p-6">
-              <h2 class="font-heading text-xl font-semibold text-forest mb-3">{title}</h2>
-              <ul class="space-y-1 text-warm-gray text-sm">
+            <div class="p-6 flex-1 flex flex-col">
+              <h2 class="font-display text-xl font-bold text-ink">{title}</h2>
+              <p class="text-ash-dark text-sm mt-1 mb-4 font-body normal-case">{description}</p>
+              <ul class="space-y-1 text-ash-dark text-sm font-mono mt-auto pt-3 border-t border-concrete">
                 {details.map((item: string) => (
-                  <li>{item}</li>
+                  <li class="flex gap-2">
+                    <span class="text-signal">&bull;</span>
+                    <span>{item}</span>
+                  </li>
                 ))}
               </ul>
             </div>
@@ -38,17 +42,15 @@ const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
 
       <!-- Local & Personal CTA -->
       <div class="mt-16 text-center">
-        <h2 class="text-3xl font-heading font-bold mb-4">Local & Personal</h2>
-        <p class="text-warm-gray mb-2">
+        <span class="eyebrow justify-center">Local &amp; Personal</span>
+        <h2 class="text-2xl md:text-3xl font-display font-black text-ink mt-2 mb-4">Your Neighborhood Shop</h2>
+        <p class="text-ash-dark mb-2 font-body">
           Contact your local Eldridge auto repair shop for a free quote and availability.
         </p>
-        <p class="text-warm-gray mb-6">
-          Contact us at <a href={`tel:${site.phone}`} class="text-rust hover:text-rust-dark font-medium transition-colors">{site.phone}</a>
+        <p class="text-ash-dark mb-6 font-mono text-sm">
+          Call us at <a href={`tel:${site.phone}`} class="text-signal hover:text-signal-dark font-medium transition-colors">{site.phone}</a>
         </p>
-        <a
-          href={`${base}contact`}
-          class="inline-block bg-rust hover:bg-rust-light text-white font-semibold py-3 px-8 rounded transition-colors"
-        >
+        <a href={`${base}contact`} class="btn-signal">
           Contact Us
         </a>
       </div>

@@ -3,51 +3,54 @@ import site from "../data/site.json";
 const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
 ---
 
-<footer class="bg-forest-dark text-cream-dark">
-  <div class="max-w-6xl mx-auto px-4 py-12 grid grid-cols-1 md:grid-cols-3 gap-8">
+<footer class="bg-ink text-ash">
+  <div class="max-w-6xl mx-auto px-4 py-14 grid grid-cols-1 md:grid-cols-3 gap-10 font-mono text-sm">
     <!-- Business info -->
     <div>
-      <h3 class="font-heading text-lg text-white mb-1">{site.name}</h3>
-      <span class="heading-accent mb-4"></span>
-      <address class="not-italic text-sm leading-relaxed">
+      <h3 class="font-display text-lg text-white mb-3 tracking-wide">{site.name}</h3>
+      <address class="not-italic leading-relaxed">
         {site.address.street}<br />
         {site.address.city}, {site.address.state} {site.address.zip}<br />
-        <a href={`tel:${site.phone}`} class="hover:text-white transition-colors">{site.phone}</a>
+        <a href={`tel:${site.phone}`} class="hover:text-signal-light transition-colors">{site.phone}</a><br />
+        <a href={`mailto:${site.email}`} class="hover:text-signal-light transition-colors">{site.email}</a>
       </address>
     </div>
 
     <!-- Hours -->
     <div>
-      <h3 class="font-heading text-lg text-white mb-1">Hours</h3>
-      <span class="heading-accent mb-4"></span>
-      <ul class="text-sm space-y-1">
+      <h3 class="font-display text-lg text-white mb-3 tracking-wide">Hours</h3>
+      <ul class="space-y-1">
         {site.hours.map(({ days, time }) => (
-          <li class="flex justify-between max-w-48">
-            <span>{days}</span>
-            <span>{time}</span>
+          <li class="flex justify-between gap-4">
+            <span class="text-ash">{days}</span>
+            <span class="text-white text-right">{time}</span>
           </li>
         ))}
       </ul>
-      <p class="text-xs mt-2 italic">{site.hoursNote}</p>
+      <p class="text-xs mt-3 text-ash/70">{site.hoursNote}</p>
     </div>
 
     <!-- Quick links -->
     <div>
-      <h3 class="font-heading text-lg text-white mb-1">Quick Links</h3>
-      <span class="heading-accent mb-4"></span>
-      <ul class="text-sm space-y-1">
-        <li><a href={base} class="hover:text-white transition-colors">Home</a></li>
-        <li><a href={`${base}services`} class="hover:text-white transition-colors">Services</a></li>
-        <li><a href={`${base}about`} class="hover:text-white transition-colors">About</a></li>
-        <li><a href={`${base}contact`} class="hover:text-white transition-colors">Contact</a></li>
-        <li class="pt-2"><a href={`${base}privacy`} class="hover:text-white transition-colors">Privacy Policy</a></li>
-        <li><a href={`${base}terms`} class="hover:text-white transition-colors">Terms & Conditions</a></li>
-        <li><a href={`${base}refund`} class="hover:text-white transition-colors">Warranty & Refunds</a></li>
+      <h3 class="font-display text-lg text-white mb-3 tracking-wide">Quick Links</h3>
+      <ul class="space-y-1">
+        <li><a href={base} class="hover:text-signal-light transition-colors">Home</a></li>
+        <li><a href={`${base}services`} class="hover:text-signal-light transition-colors">Services</a></li>
+        <li><a href={`${base}about`} class="hover:text-signal-light transition-colors">About</a></li>
+        <li><a href={`${base}contact`} class="hover:text-signal-light transition-colors">Contact</a></li>
+        <li class="pt-2 tear-rule mt-2">
+          <a href={`${base}privacy`} class="hover:text-signal-light transition-colors">Privacy Policy</a>
+        </li>
+        <li><a href={`${base}terms`} class="hover:text-signal-light transition-colors">Terms &amp; Conditions</a></li>
+        <li><a href={`${base}refund`} class="hover:text-signal-light transition-colors">Warranty &amp; Refunds</a></li>
       </ul>
     </div>
   </div>
 
-  <div class="border-t border-forest-light text-center text-xs py-4 text-warm-gray-light">
-    &copy; {new Date().getFullYear()} {site.name}. All rights reserved.
+  <div class="tear-rule">
+    <div class="max-w-6xl mx-auto px-4 py-4 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs font-mono text-ash/60">
+      <span>&copy; {new Date().getFullYear()} {site.name}. All rights reserved.</span>
+      <span>Eldridge, Iowa</span>
+    </div>
   </div>
 </footer>

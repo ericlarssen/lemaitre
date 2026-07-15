@@ -6,53 +6,51 @@ const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
 
 <Layout title={`${site.name} — Local Auto Repair in Eldridge, Iowa`}>
   <!-- Hero -->
-  <section class="bg-forest text-cream pb-4">
-    <div class="max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+  <section class="bg-ink text-paper relative overflow-hidden">
+    <div class="max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-8 items-center relative">
       <div class="py-16 md:py-24">
-        <h1 class="font-heading font-bold text-3xl md:text-4xl lg:text-5xl text-white leading-tight mb-6">
-          Where Passion Meets Precision
+        <span class="eyebrow mb-5">Eldridge, Iowa</span>
+        <h1 class="font-display font-black text-4xl md:text-5xl lg:text-6xl text-white leading-[0.95] mb-6">
+          We fix it right.<br />We tell you straight.
         </h1>
-        <p class="text-cream-dark/80 text-lg mb-8 leading-relaxed">
-          Honest service, expert care, and hometown pride in every repair.
+        <p class="text-ash text-lg mb-8 leading-relaxed max-w-md normal-case font-body">
+          Honest repair from a shop that still knows its neighbors by name.
         </p>
-        <div class="flex flex-col sm:flex-row items-start gap-4">
-          <a
-            href={`${base}contact`}
-            class="inline-block bg-rust hover:bg-rust-light text-white font-semibold py-3 px-8 rounded transition-colors"
-          >
-            Get in Touch
+        <div class="flex flex-col sm:flex-row items-start gap-5">
+          <a href={`${base}contact`} class="btn-signal">
+            Book a Repair
           </a>
-          <span class="text-cream-dark/60 text-sm py-3">
-            or call <a href={`tel:${site.phone}`} class="underline hover:text-white transition-colors">{site.phone}</a>
+          <span class="text-ash text-sm py-3 font-mono">
+            or call <a href={`tel:${site.phone}`} class="text-white hover:text-signal-light transition-colors">{site.phone}</a>
           </span>
         </div>
       </div>
-      <div class="hidden md:flex justify-center">
-        <img src={`${base}images/corey-2.png`} alt="Corey LeMaitre" class="w-3/4 h-auto rounded-lg" />
+      <div class="hidden md:block relative">
+        <div class="absolute -inset-4 border border-steel-light/70 -z-10"></div>
+        <img src={`${base}images/corey-2.png`} alt="Corey LeMaitre, owner, at the shop" class="w-full h-auto photo-warm" />
       </div>
     </div>
   </section>
 
   <!-- Services preview -->
-  <section class="bg-cream-dark pt-20 pb-24 px-4">
+  <section class="bg-concrete pt-20 pb-24 px-4">
     <div class="max-w-6xl mx-auto">
-      <div class="text-center mb-12">
-        <span class="section-label">What We Do</span>
-        <h2 class="text-2xl md:text-3xl font-heading font-bold">Our Services</h2>
-        <span class="heading-accent heading-accent--center"></span>
+      <div class="mb-12">
+        <span class="eyebrow">What We Work On</span>
+        <h2 class="text-2xl md:text-3xl font-display font-black text-ink mt-2">Services</h2>
       </div>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
         {site.services.slice(0, 4).map(({ title, image }) => (
-          <a href={`${base}services`} class="group">
-            <div class="h-40 overflow-hidden rounded-lg">
-              <img src={`${base}${image.slice(1)}`} alt={title} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" />
+          <a href={`${base}services`} class="group block bg-steel">
+            <div class="relative h-40 photo-duotone">
+              <img src={`${base}${image.slice(1)}`} alt={title} class="group-hover:scale-105 transition-transform duration-500" loading="lazy" />
             </div>
-            <h3 class="font-heading text-lg font-semibold text-forest group-hover:text-rust transition-colors mt-3">{title}</h3>
+            <h3 class="font-display text-base font-bold text-white group-hover:text-signal-light transition-colors px-4 py-4 tracking-wide">{title}</h3>
           </a>
         ))}
       </div>
-      <div class="text-center mt-10">
-        <a href={`${base}services`} class="section-label hover:text-rust-dark transition-colors">
+      <div class="mt-10">
+        <a href={`${base}services`} class="eyebrow hover:text-signal-dark transition-colors">
           View all services &rarr;
         </a>
       </div>
@@ -60,40 +58,39 @@ const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
   </section>
 
   <!-- Visit Us -->
-  <section class="pt-16 pb-20 px-4 border-t border-cream-dark">
+  <section class="pt-16 pb-20 px-4 bg-paper">
     <div class="max-w-6xl mx-auto">
-      <div class="text-center mb-12">
-        <span class="section-label">Come See Us</span>
-        <h2 class="text-2xl md:text-3xl font-heading font-bold">Visit Us</h2>
-        <span class="heading-accent heading-accent--center"></span>
+      <div class="mb-12">
+        <span class="eyebrow">Come See Us</span>
+        <h2 class="text-2xl md:text-3xl font-display font-black text-ink mt-2">Visit Us</h2>
       </div>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
-        <div>
-          <h3 class="font-heading text-xl font-semibold mb-4">Hours & Location</h3>
-          <address class="not-italic text-warm-gray mb-4">
+        <div class="font-mono text-sm">
+          <h3 class="font-display text-xl font-bold mb-4 text-ink normal-case tracking-normal">Hours &amp; Location</h3>
+          <address class="not-italic text-ash-dark mb-4 leading-relaxed">
             {site.address.street}<br />
             {site.address.city}, {site.address.state} {site.address.zip}
           </address>
-          <p class="text-warm-gray mb-1">
-            <span class="font-medium text-charcoal">Phone:</span>
-            <a href={`tel:${site.phone}`} class="hover:text-forest transition-colors">{site.phone}</a>
+          <p class="text-ash-dark mb-1">
+            <span class="text-ink">Phone:</span>
+            <a href={`tel:${site.phone}`} class="hover:text-signal transition-colors">{site.phone}</a>
           </p>
-          <p class="text-warm-gray mb-6">
-            <span class="font-medium text-charcoal">Email:</span>
-            <a href={`mailto:${site.email}`} class="hover:text-forest transition-colors">{site.email}</a>
+          <p class="text-ash-dark mb-6">
+            <span class="text-ink">Email:</span>
+            <a href={`mailto:${site.email}`} class="hover:text-signal transition-colors">{site.email}</a>
           </p>
-          <ul class="space-y-1 text-sm">
+          <ul class="space-y-1">
             {site.hours.map(({ days, time }) => (
-              <li class="flex justify-between max-w-64">
-                <span class="font-medium">{days}</span>
-                <span class="text-warm-gray">{time}</span>
+              <li class="flex justify-between max-w-64 border-b border-concrete py-1">
+                <span class="text-ink">{days}</span>
+                <span class="text-ash-dark">{time}</span>
               </li>
             ))}
           </ul>
-          <p class="text-warm-gray text-xs mt-3 italic">{site.hoursNote}</p>
-          <p class="text-warm-gray text-xs mt-1 italic">After-hours key drop available.</p>
+          <p class="text-ash text-xs mt-3">{site.hoursNote}</p>
+          <p class="text-ash text-xs mt-1">After-hours key drop available.</p>
         </div>
-        <div class="rounded-lg overflow-hidden shadow-md h-72">
+        <div class="overflow-hidden h-72 border border-concrete">
           <iframe
             src={site.googleMapsEmbedUrl}
             width="100%"
